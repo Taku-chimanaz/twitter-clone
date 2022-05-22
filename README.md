@@ -6,6 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 1. Firebase
 2. Reactjs
+3. Material UI
 
 ## Lessons learnt
 
@@ -13,3 +14,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 2. How to deploy apps with firebase
 3. How to store data in firestore
 4. How to use react-twitter.embed package
+5. How to use materialui
