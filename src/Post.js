@@ -1,36 +1,37 @@
 import { Avatar } from '@mui/material';
-import {avatarUrl} from './data'
-import React from 'react';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import FavouriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import PublishIcon from '@mui/icons-material/Publish';
 import './Post.css';
+import { forwardRef } from 'react';
 
-function Post() {
+const Post = forwardRef(({displayName, username, verified, text, image, avatar}, ref) => {
+
+    
 
   return (
 
-    <div className='post'>
+    <div className='post' ref={ref}>
 
         <div className="post__avatar">
-            <Avatar src={avatarUrl}/>
+            <Avatar src={avatar}/>
         </div>
 
         <div className="post__body">
 
             <div className="post__header">
                 <div className="post__headerText">
-                    <h3>Takudzwa L Chimanikire <span className='post__headerSpecial'><VerifiedUserIcon className="post__badge"/>@tk_cypher_zw</span> </h3>
+                    <h3>{displayName} <span className='post__headerSpecial'>{verified && <VerifiedUserIcon className="post__badge"/>}@{username}</span> </h3>
                 </div>
 
                 <div className="post__headerDescription">
-                    <p>I challenge you to build a Twitter Clone</p>
+                    <p>{text}</p>
                 </div>
             </div>
 
-            <img src="https://media3.giphy.com/media/65ATdpi3clAdjomZ39/giphy.gif" alt="gif" />
+            <img src={image} alt="" />
 
             <div className="post__footer">
                 <ChatBubbleOutlineIcon fontSize="small"/>
@@ -43,6 +44,6 @@ function Post() {
     </div>
 
   )
-}
+})
 
 export default Post
